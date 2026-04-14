@@ -1,6 +1,7 @@
 # Deal Research Matrix — Rules & Examples
 
 ## Guardrails
+- Keep every section tight — Company Overview and Revenue Fit: 1-2 sentences max. Team Highlights and Key Risks: 2-3 bullet points max. No filler, no hedging language.
 - Sourcing Recommendation must end with one of: 🟢 Pursue | 🟡 Monitor | 🔴 Pass
 - If revenue or financial data is missing, note "MISSING — verify via outreach" in Revenue Fit.
 - If HQ is missing, note "MISSING" in Company Overview.

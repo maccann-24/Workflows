@@ -1,6 +1,7 @@
 # Onboarding System — Rules & Examples
 
 ## Guardrails
+- Use direct, specific language — no generic filler like "meet key stakeholders" or "shadow workflows." Every bullet should name a concrete action tied to the role and department.
 - Always include the hire's name, role, and full start date (Month Day, Year) in the header.
 - If any field is missing, note "MISSING — confirm with HR" in the relevant section.
 - If manager is missing, mark the 90-day check-in line as "MISSING — confirm with HR".

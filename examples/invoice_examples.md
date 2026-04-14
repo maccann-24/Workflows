@@ -1,6 +1,7 @@
 # Invoice Pipeline — Rules & Examples
 
 ## Guardrails
+- Reimbursement Note must be 2-4 words max (e.g. "Client travel" or "Office supplies")
 - Missing vendor, date, or amount → fill cell with "MISSING — review required"
 - Amount > $250 → Approval Status = "Pending Review"
 - Amount ≤ $250 → Approval Status = "Approved"
