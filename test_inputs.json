@@ -1,0 +1,162 @@
+[
+  {
+    "id": "happy_01",
+    "category": "happy_path",
+    "input": "Morning queue — Monday Apr 14\n\n1. Receipt: Marriott, Apr 11, $289.00, client overnight stay\n2. New hire: Elena Vasquez, Role: Account Executive, Dept: Sales, Start: Apr 28, Manager: Tom Briggs\n3. Project update — Meridian Portal Rebuild: Budget 52% consumed on track, Schedule on track, Accomplishments: API layer complete, Risk: none\n4. Email — From: COO: \"Need headcount rollup for all departments by end of week.\"\n5. Email — From: Landlord (WeWork): \"Reminder: lease renewal decision due by April 30.\"\n6. Research: Clearfield Systems — federal IT services, ~55 employees, Series B ($15M), annual revenue ~$8M, recent CISA BPA award, HQ Herndon VA",
+    "expected_routing": {"EXPENSES": 1, "HIRES": 1, "PROJECTS": 1, "INBOX": 2, "RESEARCH": 1},
+    "expected_guardrails": [],
+    "notes": "Standard 6-item queue, all 5 types represented, one expense just over $250 triggers Pending Review"
+  },
+  {
+    "id": "happy_02",
+    "category": "happy_path",
+    "input": "Morning queue — Tuesday Apr 15\n\n1. Receipt: Uber, Apr 14, $31.50, airport pickup\n2. Receipt: Nobu DC, Apr 14, $187.40, client dinner\n3. New hire: Jordan Kim, Role: Data Engineer, Dept: Analytics, Start: May 5, Manager: Priya Okonkwo\n4. Project update — AWS Cost Optimization: Budget 41% consumed, Schedule 2 weeks ahead, Accomplishments: Reserved instance analysis complete, tagging policy live, Risk: minor — one legacy workload incompatible with auto-scaling\n5. Email — From: CFO: \"Quick question on the Series B bridge timeline — can we connect today?\"\n6. Research: Pinnacle Aerospace — defense electronics supplier, ~90 employees, Series A ($12M), estimated ARR ~$6M, HQ Tucson AZ",
+    "expected_routing": {"EXPENSES": 2, "HIRES": 1, "PROJECTS": 1, "INBOX": 1, "RESEARCH": 1},
+    "expected_guardrails": [],
+    "notes": "6-item queue, 2 receipts both under $250, urgent CFO email, research with funding data present"
+  },
+  {
+    "id": "happy_03",
+    "category": "happy_path",
+    "input": "Morning queue — Wednesday Apr 16\n\n1. Receipt: Delta Airlines, Apr 13, $521.00, Chicago client trip\n2. Receipt: Lyft, Apr 13, $44.80, airport ground transport\n3. Receipt: Protein Bar & Kitchen, Apr 14, $18.60, team working lunch\n4. New hire: Marcus Thornton, Role: Infrastructure Engineer, Dept: Platform, Start: Apr 21, Manager: Lena Park\n5. Project update — Customer Data Platform v2: Budget 78% consumed, 3 weeks behind schedule due to vendor API delays, Accomplishments: Core schema finalized, staging environment live, Risk: third-party integration timeline at risk\n6. Email — From: VP Sales (Rachel Holt): \"Client Meridian wants a proposal for expanded scope — they need it by Friday.\"\n7. Email — From: IT: \"System maintenance Saturday 11pm to 2am. No action needed.\"\n8. Research: Lynx Biomedical — digital health SaaS, ~35 employees, seed stage ($3.5M raised), pre-revenue, HQ Cambridge MA, HIPAA-compliant platform",
+    "expected_routing": {"EXPENSES": 3, "HIRES": 1, "PROJECTS": 1, "INBOX": 2, "RESEARCH": 1},
+    "expected_guardrails": [],
+    "notes": "8-item queue, 3 receipts (one large travel over $250), behind-schedule project, mixed inbox urgency"
+  },
+  {
+    "id": "happy_04",
+    "category": "happy_path",
+    "input": "Morning queue — Thursday Apr 17\n\n1. Receipt: Amtrak, Apr 16, $112.00, NYC client meeting travel\n2. New hire: Simone Adeyemi, Role: Product Designer, Dept: Product, Start: Apr 29, Manager: Chris Walton\n3. New hire: Ryan Delgado, Role: Sales Development Rep, Dept: Sales, Start: Apr 29, Manager: Tom Briggs\n4. Project update — Compliance Dashboard: Budget 60% consumed, Schedule on track, Accomplishments: SOC 2 audit prep artifacts uploaded, Risk: none\n5. Email — From: Client (Hargrove Partners): \"Can you confirm delivery of the Q2 reporting package by next Wednesday?\"\n6. Research: Orbital Networks — enterprise SASE vendor, ~200 employees, Series C ($65M), ARR ~$30M, HQ Denver CO",
+    "expected_routing": {"EXPENSES": 1, "HIRES": 2, "PROJECTS": 1, "INBOX": 1, "RESEARCH": 1},
+    "expected_guardrails": [],
+    "notes": "6-item queue, 2 hires in same cohort, client email needs action reply"
+  },
+  {
+    "id": "happy_05",
+    "category": "happy_path",
+    "input": "Morning queue — Friday Apr 18\n\n1. Receipt: Hilton, Apr 15, $399.00, Denver offsite\n2. Receipt: United Airlines, Apr 15, $308.50, Denver offsite travel\n3. Receipt: Snarf's Sandwiches, Apr 16, $47.20, team lunch\n4. Receipt: Lyft, Apr 17, $29.10, ground transport\n5. New hire: Tatiana Brooks, Role: Customer Success Manager, Dept: CS, Start: May 12, Manager: Deja Williams\n6. Project update — Rebrand Launch: Budget 88% consumed, Schedule 1 week behind, Accomplishments: All creative assets approved, staging site live, Risk: dev handoff delayed waiting on legal review of new trademark\n7. Email — From: Board Member (Paul Reiser): \"FYI — I've shared the board deck with two advisors for review. No action needed from you.\"\n8. Research: Keystone Analytics — revenue intelligence SaaS, ~70 employees, Series B ($22M), ARR ~$12M, HQ Atlanta GA, key customers include 3 Fortune 500 retail brands",
+    "expected_routing": {"EXPENSES": 4, "HIRES": 1, "PROJECTS": 1, "INBOX": 1, "RESEARCH": 1},
+    "expected_guardrails": [],
+    "notes": "8-item queue, 4 receipts (2 over $250), board member email correctly routes to Info, rebrand project at risk"
+  },
+  {
+    "id": "guardrail_01",
+    "category": "guardrail",
+    "input": "Morning queue — Monday Apr 14\n\n1. Receipt: Hilton, Apr 12, $214.00, team offsite\n2. New hire: Sofia Brennan, Role: Marketing Manager, Dept: Marketing, Start: Apr 28, Manager:\n3. Project update — Data Lake Migration: Budget 55% consumed, Schedule on track, Accomplishments: S3 bucket architecture finalized, Risk: none\n4. Email — From: Vendor (Salesforce): \"Renewal reminder for your Enterprise contract, auto-renews May 1. No immediate action required.\"\n5. Research: Redwood Compliance — RegTech SaaS, ~45 employees, Series A, HQ San Francisco CA",
+    "expected_routing": {"EXPENSES": 1, "HIRES": 1, "PROJECTS": 1, "INBOX": 1, "RESEARCH": 1},
+    "expected_guardrails": ["MISSING — review required"],
+    "notes": "Manager field blank on hire — should trigger MISSING marker in HIRES section 90-day check-in line"
+  },
+  {
+    "id": "guardrail_02",
+    "category": "guardrail",
+    "input": "Morning queue — Tuesday Apr 15\n\n1. Receipt: American Airlines, $467.00, client conference travel\n2. New hire: Derek Nolan, Role: Solutions Architect, Dept: Engineering, Start: May 6, Manager: Laura Shin\n3. Project update — ERP Upgrade Phase 3: Budget 71% consumed, Schedule on track, Accomplishments: UAT environment provisioned, Risk: minor — legacy data migration requires manual QA\n4. Email — From: CEO: \"Let's align on the annual plan before the board call Friday. Can you pull the latest numbers?\"",
+    "expected_routing": {"EXPENSES": 1, "HIRES": 1, "PROJECTS": 1, "INBOX": 1},
+    "expected_guardrails": ["MISSING — review required"],
+    "notes": "Date field missing on receipt — should trigger MISSING marker in EXPENSES Date cell; no RESEARCH section expected"
+  },
+  {
+    "id": "guardrail_03",
+    "category": "guardrail",
+    "input": "Morning queue — Wednesday Apr 16\n\n1. Receipt: WeWork, Apr 15, $3200.00, April co-working desk rental\n2. New hire: Nathaniel Cross, Role: Financial Analyst, Dept: Finance, Start: Apr 30, Manager: Carolyn Webb\n3. Email — From: Team Lead (Marcus): \"Standup is pushed to 10am today, heads up.\"\n4. Research: Quantum Edge Technologies — AI infrastructure startup, ~30 employees, founded 2023, seed funded",
+    "expected_routing": {"EXPENSES": 1, "HIRES": 1, "INBOX": 1, "RESEARCH": 1},
+    "expected_guardrails": ["MISSING"],
+    "notes": "HQ field missing on research company — should trigger MISSING marker in Research Overview; no PROJECTS section expected"
+  },
+  {
+    "id": "guardrail_04",
+    "category": "guardrail",
+    "input": "Morning queue — Thursday Apr 17\n\n1. Receipt: Regus, Apr 16, $890.00, conference room rental\n2. New hire: Amara Osei, Role: Operations Analyst, Dept: Operations, Start: May 5, Manager: Dana Pierce\n3. Project update — Mobile App Redesign: Schedule 2 weeks ahead, Accomplishments: New navigation flow approved, accessibility audit complete, Risk: none\n4. Email — From: Partner (Benchmark Capital): \"Great call yesterday. Looking forward to the term sheet review next week.\"\n5. Research: Stratus Cloud Consulting — AWS managed services, ~80 employees, bootstrapped, HQ Austin TX",
+    "expected_routing": {"EXPENSES": 1, "HIRES": 1, "PROJECTS": 1, "INBOX": 1, "RESEARCH": 1},
+    "expected_guardrails": ["MISSING — review required"],
+    "notes": "Budget field missing on project update — should trigger MISSING marker in PROJECTS Budget row"
+  },
+  {
+    "id": "subset_01",
+    "category": "subset",
+    "input": "Morning queue — Monday Apr 14\n\n1. Receipt: Uber, Apr 13, $27.50, client pickup\n2. Receipt: Amazon Business, Apr 13, $94.30, office supplies restock\n3. Email — From: Client (Trident Media): \"Following up on last week's proposal. Any update on pricing?\"\n4. Email — From: Legal: \"Reminder: NDAs for the Martinez deal need counter-signatures by COB Wednesday.\"\n5. Email — From: Office Manager: \"Kitchen supplies order placed. Delivery Thursday. No action needed.\"",
+    "expected_routing": {"EXPENSES": 2, "INBOX": 3},
+    "expected_guardrails": [],
+    "notes": "Only EXPENSES and INBOX present — HIRES, PROJECTS, RESEARCH sections must be omitted entirely"
+  },
+  {
+    "id": "subset_02",
+    "category": "subset",
+    "input": "Morning queue — Tuesday Apr 15\n\n1. New hire: Calvin Rhodes, Role: DevOps Engineer, Dept: Platform, Start: Apr 28, Manager: Nadia Petrova\n2. Research: Apex Sentinel — cybersecurity managed services, ~110 employees, Series B ($31M raised), HQ Reston VA, DoD clearance holder",
+    "expected_routing": {"HIRES": 1, "RESEARCH": 1},
+    "expected_guardrails": [],
+    "notes": "Only HIRES and RESEARCH present — EXPENSES, PROJECTS, INBOX must be omitted entirely"
+  },
+  {
+    "id": "subset_03",
+    "category": "subset",
+    "input": "Morning queue — Wednesday Apr 16\n\n1. Project update — Partner API Launch: Budget 33% consumed, Schedule on track, Accomplishments: OAuth2 integration complete, Rate limiting live, Risk: none\n2. Project update — Billing System Overhaul: Budget 91% consumed, Schedule 3 weeks behind, Accomplishments: Stripe migration complete, Risk: PCI compliance audit scheduled but vendor availability uncertain\n3. Project update — Internal Wiki Migration: Budget 20% consumed, Schedule on track, Accomplishments: Confluence import scripts tested, Risk: none",
+    "expected_routing": {"PROJECTS": 3},
+    "expected_guardrails": [],
+    "notes": "Only PROJECTS present — 3 project updates, other 4 sections must be omitted entirely"
+  },
+  {
+    "id": "edge_01",
+    "category": "edge_case",
+    "input": "Morning queue — Thursday Apr 17\n\n1. Receipt: Lyft, Apr 16, $19.80, commute to office\n2. Marcus Webb sent over a note about the Salesforce expansion — he's pushing the kickoff to next Thursday and wants everyone's availability. Can you flag this for the project log and loop in Dana?\n3. New hire: Ingrid Solvang, Role: Technical Writer, Dept: Engineering, Start: May 1, Manager: Chris Park\n4. Email — From: CFO: \"Budget freeze in effect starting May 1. All discretionary spend requires my approval.\"\n5. Research: Halcyon Federal — ~40 employees, DoD subcontractor, cleared staff, recent DISA task order",
+    "expected_routing": {"EXPENSES": 1, "HIRES": 1, "INBOX": 1, "RESEARCH": 1},
+    "expected_guardrails": [],
+    "notes": "Item 2 is ambiguous — could be PROJECTS or INBOX; expect (low confidence) annotation or UNROUTED with reason; HQ missing on research"
+  },
+  {
+    "id": "edge_02",
+    "category": "edge_case",
+    "input": "Morning queue — Friday Apr 18\n\n1. Receipt: Panera Bread, Apr 17, $23.40, working lunch\n2. The purple elephant dances at midnight. Bring seventeen calculators to the rooftop meeting.\n3. Email — From: Vendor (Zoom): \"Your annual renewal is next month. No action needed at this time.\"\n4. Research: Frontier Logistics — last-mile delivery SaaS, ~150 employees, Series C ($48M), HQ Nashville TN",
+    "expected_routing": {"EXPENSES": 1, "INBOX": 1, "RESEARCH": 1},
+    "expected_guardrails": [],
+    "notes": "Item 2 is unroutable nonsense — should appear in UNROUTED section with a one-line reason, not force-fit into any category"
+  },
+  {
+    "id": "edge_03",
+    "category": "edge_case",
+    "input": "Morning queue — Monday Apr 21\n\n1. Receipt: JetBlue, Apr 18, $384.00, Boston client trip\n2. Receipt: Hotel Marlowe, Apr 18, $276.50, Boston overnight\n3. Receipt: Enterprise Rent-A-Car, Apr 19, $148.00, Boston rental\n4. New hire: Danielle Torres, Role: Legal Counsel, Dept: Legal, Start: May 6, Manager: Ethan Marsh\n5. Email — From: Recruiter: \"3 candidates shortlisted for the Staff Engineer role. Can we schedule debrief calls this week?\"\n6. Email — From: Client (Greenfield Capital): \"The term sheet looks good. We'd like to close by April 25 — can you confirm that timeline?\"\n7. Email — From: IT: \"Password policy update: all accounts must rotate credentials by Friday. No action needed — automated reset will run.\"",
+    "expected_routing": {"EXPENSES": 3, "HIRES": 1, "INBOX": 3},
+    "expected_guardrails": [],
+    "notes": "3 receipts in a row (duplicate type stress), 3 emails (all different urgency levels), no PROJECTS or RESEARCH"
+  },
+  {
+    "id": "scale_01",
+    "category": "scale",
+    "input": "Morning queue — Tuesday Apr 22\n\n1. Receipt: Southwest Airlines, Apr 21, $219.00, Dallas client visit",
+    "expected_routing": {"EXPENSES": 1},
+    "expected_guardrails": [],
+    "notes": "Single-item queue — still must render full MORNING BRIEFING header + queue summary, only EXPENSES section"
+  },
+  {
+    "id": "scale_02",
+    "category": "scale",
+    "input": "Morning queue — Wednesday Apr 23\n\n1. Receipt: Whole Foods Market, Apr 22, $64.50, team offsite catering\n2. New hire: Brendan Cole, Role: Sales Engineer, Dept: Sales, Start: May 13, Manager: Rachel Holt\n3. Email — From: CTO: \"We need to move the architecture review to Thursday. Please resend the invite.\"",
+    "expected_routing": {"EXPENSES": 1, "HIRES": 1, "INBOX": 1},
+    "expected_guardrails": [],
+    "notes": "3-item queue, one of each: expense under $250, hire with full fields, urgent CTO email"
+  },
+  {
+    "id": "scale_03",
+    "category": "scale",
+    "input": "Morning queue — Thursday Apr 24\n\n1. Receipt: Hyatt Regency, Apr 21, $512.00, San Francisco board offsite\n2. Receipt: United Airlines, Apr 21, $388.00, SF flight\n3. Receipt: Lyft, Apr 21, $52.30, SF airport transport\n4. Receipt: Bix Restaurant, Apr 22, $186.40, board dinner\n5. Receipt: Costco Business, Apr 23, $231.00, office supply bulk order\n6. New hire: Grace Nakamura, Role: Growth Marketing Manager, Dept: Marketing, Start: May 6, Manager: Priya Okonkwo\n7. New hire: Oliver Chen, Role: Senior Backend Engineer, Dept: Engineering, Start: May 6, Manager: Lena Park\n8. Project update — Q2 OKR Dashboard: Budget 28% consumed, Schedule on track, Accomplishments: OKR framework finalized and approved by leadership, Risk: none\n9. Email — From: CEO: \"I want a full ops review presentation ready for the Monday all-hands. Can your team own this?\"\n10. Email — From: Vendor (DocuSign): \"Your team has 3 unsigned documents pending. Action required before April 30.\"\n11. Email — From: Facilities: \"HVAC inspection is Tuesday morning. No disruption to offices expected. No action needed.\"\n12. Research: Vantage Point Defense — space systems integrator, ~120 employees, SBIR Phase II recipient, HQ Colorado Springs CO",
+    "expected_routing": {"EXPENSES": 5, "HIRES": 2, "PROJECTS": 1, "INBOX": 3, "RESEARCH": 1},
+    "expected_guardrails": [],
+    "notes": "10-item stress test queue across all 5 categories, verifies section ordering and queue summary accuracy at scale"
+  },
+  {
+    "id": "error_01",
+    "category": "error",
+    "input": "",
+    "expected_routing": {},
+    "expected_guardrails": [],
+    "notes": "Empty string input — must return exactly: 'Invalid input — please provide a morning queue.' with no partial output"
+  },
+  {
+    "id": "error_02",
+    "category": "error",
+    "input": "asdf jkl; qwer zxcv 1234 !!! ??? lorem ipsum dolor sit amet consectetur adipiscing",
+    "expected_routing": {},
+    "expected_guardrails": [],
+    "notes": "Gibberish / non-queue input — must return exactly: 'Invalid input — please provide a morning queue.' with no partial output"
+  }
+]

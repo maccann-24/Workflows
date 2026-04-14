@@ -1,0 +1,10 @@
+.env*
+!.env.example
+.venv/
+__pycache__/
+evals/results/
+*.pyc
+.DS_Store
+.pytest_cache/
+CLAUDE.md
+.claude/
