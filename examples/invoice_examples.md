@@ -1,5 +1,7 @@
 # Invoice Pipeline — Few-Shot Examples
 
+Note: This workflow accepts receipt data as text OR as images of receipts. If given an image, extract vendor, date, amount, and category before processing.
+
 ## Example 1 — Guardrail firing on missing field
 
 Input:
