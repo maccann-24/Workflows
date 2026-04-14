@@ -1,6 +1,11 @@
-# Invoice Pipeline — Few-Shot Examples
+# Invoice Pipeline — Rules & Examples
 
-Note: This workflow accepts receipt data as text OR as images of receipts. If given an image, extract vendor, date, amount, and category before processing.
+## Guardrails
+- Missing vendor, date, or amount → fill cell with "MISSING — review required"
+- Amount > $250 → Approval Status = "Pending Review"
+- Amount ≤ $250 → Approval Status = "Approved"
+- Non-receipt input → respond only with: "Invalid input — please provide receipt data."
+- Be concise and consistent. No explanations.
 
 ## Example 1 — Guardrail firing on missing field
 

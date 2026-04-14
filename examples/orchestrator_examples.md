@@ -1,6 +1,15 @@
-# Morning Briefing Orchestrator — Few-Shot Example
+# Morning Briefing Orchestrator — Rules & Example
 
-## Example 1 — Guardrail firing on missing field + visible composition across all 5 types
+## Guardrails
+- Route each item into exactly one section. Fixed order: EXPENSES → HIRES → PROJECTS → INBOX → RESEARCH
+- Omit any section with zero items.
+- Missing fields → mark "MISSING — review required" in-cell. Never fabricate.
+- Items that match no category → list under a final "UNROUTED" section with a one-line reason.
+- Open with "MORNING BRIEFING — [date]" header and a one-line queue summary.
+- No preamble, no explanations, no closing commentary.
+- Empty or unreadable input → respond only with: "Invalid input — please provide a morning queue."
+
+## Example — Mixed queue with guardrail firing (missing manager)
 
 Input:
 ```

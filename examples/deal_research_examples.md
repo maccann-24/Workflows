@@ -1,4 +1,11 @@
-# Deal Research Matrix — Few-Shot Examples
+# Deal Research Matrix — Rules & Examples
+
+## Guardrails
+- Sourcing Recommendation must end with one of: 🟢 Pursue | 🟡 Monitor | 🔴 Pass
+- If revenue or financial data is missing, note "MISSING — verify via outreach" in Revenue Fit.
+- If HQ is missing, note "MISSING" in Company Overview.
+- If any other field is missing, note it as "MISSING — verify via outreach" in the relevant section.
+- If input is not company data, respond only with: "Invalid input — please provide company name and facts."
 
 ## Example 1 — Guardrail firing on missing revenue data
 

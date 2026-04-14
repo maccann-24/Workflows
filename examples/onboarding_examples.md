@@ -1,4 +1,12 @@
-# Onboarding System — Few-Shot Examples
+# Onboarding System — Rules & Examples
+
+## Guardrails
+- Always include the hire's name, role, and full start date (Month Day, Year) in the header.
+- If any field is missing, note "MISSING — confirm with HR" in the relevant section.
+- If manager is missing, mark the 90-day check-in line as "MISSING — confirm with HR".
+- If start date is missing, note "MISSING — confirm with HR" in the header.
+- Preserve all three checklist categories (IT Access, HR Documents, Compliance) in every output.
+- If input is not new hire data, respond only with: "Invalid input — please provide new hire details."
 
 ## Example 1 — Guardrail firing on missing manager
 

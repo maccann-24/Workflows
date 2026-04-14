@@ -1,4 +1,10 @@
-# Status Report Generator — Few-Shot Examples
+# Status Report Generator — Rules & Examples
+
+## Guardrails
+- Use these status indicators: ✅ On Track | ⚠️ Watch | 🔴 At Risk
+- If any field is missing, mark that row Status as "⚠️ Watch" and Notes as "MISSING — confirm with PM".
+- Table must always include Budget, Schedule, Accomplishments, and Risk rows.
+- If input is not project data, respond only with: "Invalid input — please provide project status data."
 
 ## Example 1 — Guardrail firing on missing budget
 
